@@ -10,7 +10,7 @@ const http = require("http");
 const fs = require("fs");
 
 const server = http.createServer((req, res) => {
-  // ---------1-----------------------------------------------------
+  // ---------1---------------------------------------
   //  Serving a large file without streams
   //--------------------------------------------------
 
@@ -23,7 +23,7 @@ const server = http.createServer((req, res) => {
   //   fileStream.pipe(res);
   //   res.end();
 
-  // ---------2-----------------------------------------------------
+  // ---------2---------------------------------------
   // copying a large file
 
   //* Copying in a bad way without streams
@@ -39,6 +39,7 @@ const server = http.createServer((req, res) => {
   const writeStream = fs.createWriteStream("output.txt");
   readStream.on("data", (chunk) => {
     console.log("CHANK: ", chunk);
+    writeStream.write(chunk);
   });
 });
 
