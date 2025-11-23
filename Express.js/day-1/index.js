@@ -1,7 +1,5 @@
 import express from 'express';
 import Userdata from "./data/data.js"
-
-
 const app = express();
 const PORT = 3000;
 
