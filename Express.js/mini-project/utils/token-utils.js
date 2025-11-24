@@ -6,4 +6,5 @@ export const generateToken = () => {
 
 export const validateToken = (token) => {
     return token.length === 32; 
+    
 }
