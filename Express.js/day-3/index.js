@@ -4,6 +4,8 @@ const app = express();
 
 
 app.get('/', (req, res) => {
+  // Set a cookie named "name" with the value "JM"
+  res.cookie("name", "JM")
   res.send('Hello, World!');
 });
 
