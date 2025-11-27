@@ -14,11 +14,18 @@ app.get('/', (req, res) => {
 
 app.get('/show-cookie', (req, res) => {
   console.log('Cookies: ', req.cookies);
+if(req.cookies.name && req.cookies.name === "JM"){
   res.send({
     id: 1,
     name: 'JM',
     price: 3000
   });
+
+}
+res.status(401).send('Unauthorized Access')
+
+
+  
 })
 
 app.listen(3050, () => {
