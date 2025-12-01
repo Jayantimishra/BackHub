@@ -7,5 +7,13 @@ router.post('/login', Login );
 
 router.get('/logout', Logout );
 
+router.get('/check', (req, res) => {
+  // Check if user is logged in
+  if (req.session.user) {
+    return res.json({ loggedIn: true, username: req.session.user.username });
+    }
+    return res.json({ loggedIn: false });
+});
+
 
 export default router;
