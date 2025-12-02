@@ -1,4 +1,6 @@
 export const Login = (req, res) => {
+  console.log("BODY RECEIVED →", req.body);
+
   // Handle user login
   const { username } = req.body;
 

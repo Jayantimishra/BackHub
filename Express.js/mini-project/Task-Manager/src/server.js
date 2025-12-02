@@ -4,11 +4,15 @@ import session from 'express-session';
 
 import authRoute from './routes/auth.routes.js';
 
+
 const app = express();
 
 const PORT = 8080;
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+
 app.use(session({
     secret: 'your_secret_key',
     resave: false,
