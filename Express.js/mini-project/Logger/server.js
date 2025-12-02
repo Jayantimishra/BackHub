@@ -17,15 +17,11 @@ if(!fs.existsSync(path.join(__dirname, "logs"))) {
     fs.mkdirSync(path.join(__dirname, "logs"));
 }
 
-
-
-
 // inbuilt middleware to handle json data
 app.use(express.json());
 
 // !Global middleware to log all requests
 app.use(logMiddleware);
-
 
 // middlewares to routes
 app.use("/public", publicRoutes);
