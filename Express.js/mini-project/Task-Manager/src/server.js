@@ -4,6 +4,7 @@ import cookieParser from 'cookie-parser';
 import session from 'express-session';
 
 import authRoute from './routes/auth.routes.js';
+import taskRoute from './routes/task.routes.js';
 
 const app = express();
 const PORT = 8080;
@@ -24,6 +25,7 @@ app.use(session({
 }));
 
 app.use('/auth', authRoute);
+app.use('/task', taskRoute);
 
 app.get('/', (req, res) => {
   res.send('Welcome to the Task Manager API');
