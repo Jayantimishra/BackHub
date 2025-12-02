@@ -24,12 +24,14 @@ app.use(session({
   },
 }));
 
-app.use('/auth', authRoute);
-app.use('/task', taskRoute);
-
 app.get('/', (req, res) => {
   res.send('Welcome to the Task Manager API');
 });
+
+app.use('/auth', authRoute);
+app.use('/task', taskRoute);
+
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
