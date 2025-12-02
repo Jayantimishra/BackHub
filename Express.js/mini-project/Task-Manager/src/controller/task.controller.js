@@ -26,7 +26,6 @@ export const createTask = async (req, res) => {
 
   res.status(201).json(newTask);
 };
-
 export const updateTask = () => {};
 export const getTaskById = () => {};
 
